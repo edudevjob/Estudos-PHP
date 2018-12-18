@@ -10,6 +10,9 @@
       v-bind:itens="[[1,'Programação com Laravel','Blog utilizando Vue.js','Eduardo Alexandre','24/12/2019'],
                     [2,'Programação com React','Blog utilizando Javascript','Eduardo Alexandre','24/12/2019']]"
 
+      {{--  Ordebação das Listas  --}}
+      ordem="asc" ordemCol="0"
+
     {{--  //Botões de Ações - Tabela de Lista de Artigos  --}}  
     criar="#criar" detalhe="#detalhe" editar="#editar" deletar="#deletar" token="1616564564">
 

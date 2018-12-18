@@ -42919,79 +42919,9 @@ module.exports = Component.exports
 
 /***/ }),
 /* 67 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['titulos', 'itens', 'criar', 'detalhe', 'editar', 'deletar', 'token'],
-    data: function data() {
-        return {
-            buscar: ''
-        };
-    },
-    methods: {
-        executaForm: function executaForm(index) {
-            document.getElementById(index).submit();
-        }
-    },
-    computed: {
-        lista: function lista() {
-            return this.itens;
-        }
-    }
-});
+throw new Error("Module build failed: SyntaxError: Unexpected token (59:8)\n\n\u001b[0m \u001b[90m 57 | \u001b[39m                ordemAux\u001b[33m:\u001b[39m\n \u001b[90m 58 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 | \u001b[39m        }\n \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 | \u001b[39m    }\u001b[33m,\u001b[39m\n \u001b[90m 61 | \u001b[39m    methods\u001b[33m:\u001b[39m{\n \u001b[90m 62 | \u001b[39m        executaForm\u001b[33m:\u001b[39m \u001b[36mfunction\u001b[39m(index){\u001b[0m\n");
 
 /***/ }),
 /* 68 */
@@ -43044,8 +42974,19 @@ var render = function() {
         _c(
           "tr",
           [
-            _vm._l(_vm.titulos, function(titulo) {
-              return _c("th", [_vm._v(_vm._s(titulo))])
+            _vm._l(_vm.titulos, function(titulo, index) {
+              return _c(
+                "th",
+                {
+                  staticStyle: { curso: "pointer" },
+                  on: {
+                    click: function($event) {
+                      _vm.ordenaColuna(index)
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(titulo))]
+              )
             }),
             _vm._v(" "),
             _vm.detalhe || _vm.editar || _vm.deletar

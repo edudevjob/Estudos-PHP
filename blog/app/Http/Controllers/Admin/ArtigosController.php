@@ -14,7 +14,22 @@ class ArtigosController extends Controller
      */
     public function index()
     {
-        return view('admin.artigos.index');
+        $listaBreadcrumbs = json_encode([
+            ["titulo"=>"Home","url"=>route('home')],
+            ["titulo"=>"Listagem de Artigos","url"=>""]
+        ]);
+     /** 
+     * Enviando Dados para a View 
+     */
+        $listaArtigos = json_encode([
+            ["id"=>1,"titulo"=>"Programação com Laravel","descricao"=>"Blog Utilizando VueJS",
+            "author"=>"Eduardo Alexandre","data"=>"24/12/18"],
+
+            ["id"=>2,"titulo"=>"Programação com Reactl","descricao"=>"Blog Utilizando Javascript",
+            "author"=>"Eduardo Alexandre","data"=>"24/12/19"]
+        ]);
+
+             return view('admin.artigos.index',compact('listaBreadcrumbs','listaArtigos'));
     }
 
     /**

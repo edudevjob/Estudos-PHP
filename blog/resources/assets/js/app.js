@@ -8,6 +8,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vuex from 'vuex';
+Vue.use(Vuex);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,12 +17,33 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ //Vuex
+
+ const store = new Vuex.Store({
+   state:{
+     itens:{
+       teste:"opa funcionou"
+      }
+   },
+   mutations:{
+     setItens(state,obj){
+       state.itens = obj;
+     }
+   }
+ });
+
+
 Vue.component('topo', require('./components/Topo.vue'));
-Vue.component('pagina', require('./components/Pagina.vue'));
 Vue.component('painel', require('./components/Painel.vue'));
 Vue.component('box', require('./components/Box.vue'));
+Vue.component('pagina', require('./components/Pagina.vue'));
 Vue.component('tabela-lista', require('./components/TabelaLista.vue'));
+Vue.component('breadcrumbs', require('./components/Breadcrumbs.vue'));
+Vue.component('modal', require('./components/modal/Modal.vue'));
+Vue.component('modal-link', require('./components/modal/ModalLink.vue'));
+Vue.component('formulario', require('./components/Formulario.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });
